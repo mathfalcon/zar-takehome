@@ -48,11 +48,11 @@ const options: ThemeOptions = {
         text: {
             primary: textPrimary,
             secondary: textSecondary,
-            tertiary: textTertiary
+            tertiary: textTertiary,
         },
         background: {
             paper: elevationE1,
-            default: transparent
+            default: transparent,
         },
         action: {
             hover: actionHover,
@@ -108,13 +108,13 @@ const options: ThemeOptions = {
             fontFamily: '"Saira","Roboto", "Helvetica", "Arial", sans-serif',
             fontWeight: 500,
             fontSize: '2rem',
-            lineHeight: '1rem'
+            lineHeight: '1rem',
         },
         h5: {
             fontFamily: '"Saira","Roboto", "Helvetica", "Arial", sans-serif',
             fontWeight: 500,
             fontSize: '1.5rem',
-            lineHeight: '1rem'
+            lineHeight: '1rem',
         },
         h6: {
             fontFamily: '"Saira","Roboto", "Helvetica", "Arial", sans-serif',
@@ -187,11 +187,11 @@ const options: ThemeOptions = {
             fontFamily: '"Saira","Roboto", "Helvetica", "Arial", sans-serif',
             fontSize: '2.5rem',
             lineHeight: '1.75rem',
-        }
+        },
     },
     shape: {
-        borderRadius: 3
-    }
-}
+        borderRadius: 3,
+    },
+};
 
 export const theme = createMuiTheme(options);

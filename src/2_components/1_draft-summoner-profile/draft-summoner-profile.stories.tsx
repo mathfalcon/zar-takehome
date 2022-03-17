@@ -4,121 +4,116 @@ import { Client } from '../../common/league';
 import { DraftSummonerProfile, DraftSummonerProfileProps } from './draft-summoner-profile';
 
 export default {
-    title: '2 Components / 1 Draft Summoner Profile',
-    component: DraftSummonerProfile
+  title: '2 Components / 1 Draft Summoner Profile',
+  component: DraftSummonerProfile,
 };
 
-
 const Template = (args: DraftSummonerProfileProps) => (
-    <ResourceProvider>
-        <div style={{ width: 268 }}>
-            <DraftSummonerProfile {...args} />
-        </div>
-    </ResourceProvider>
+  <ResourceProvider>
+    <div style={{ width: 268 }}>
+      <DraftSummonerProfile {...args} />
+    </div>
+  </ResourceProvider>
 );
 
-
 export const NoDataNoRoleNoChampion: {
-    args: DraftSummonerProfileProps
+  args: DraftSummonerProfileProps;
 } = Template.bind({});
 
 NoDataNoRoleNoChampion.args = {
-    profile: {
-        summonerName: 'Spirax'
-    }
+  profile: {
+    summonerName: 'Spirax',
+  },
 };
 
-
 export const NoDataRoleNoChampion: {
-    args: DraftSummonerProfileProps
+  args: DraftSummonerProfileProps;
 } = Template.bind({});
 
 NoDataRoleNoChampion.args = {
-    profile: {
-        summonerName: 'Spirax',
-        role: Client.Role.Jungle,
-    }
+  profile: {
+    summonerName: 'Spirax',
+    role: Client.Role.Jungle,
+  },
 };
 
-
 export const NoDataRoleChampion: {
-    args: DraftSummonerProfileProps
+  args: DraftSummonerProfileProps;
 } = Template.bind({});
 
 NoDataRoleChampion.args = {
-    profile: {
-        summonerName: 'Spirax',
-        role: Client.Role.Jungle,
-        championId: Client.ChampionId.Ekko
-    }
+  profile: {
+    summonerName: 'Spirax',
+    role: Client.Role.Jungle,
+    championId: Client.ChampionId.Ekko,
+  },
 };
 
-
 export const DataNoRoleNoChampion: {
-    args: DraftSummonerProfileProps
+  args: DraftSummonerProfileProps;
 } = Template.bind({});
 
 DataNoRoleNoChampion.args = {
-    profile: {
-        summonerName: 'Spirax',
+  profile: {
+    summonerName: 'Spirax',
 
-        winrate: 50.1,
-        gamesPlayed: 221,
+    winrate: 50.1,
+    gamesPlayed: 221,
 
-        tier: Client.Tier.Gold,
-        division: Client.Division.III
-    }
+    tier: Client.Tier.Gold,
+    division: Client.Division.III,
+  },
 };
 
 export const DataRoleNoChampion: {
-    args: DraftSummonerProfileProps
+  args: DraftSummonerProfileProps;
 } = Template.bind({});
 
 DataRoleNoChampion.args = {
-    profile: {
-        summonerName: 'Spirax',
+  profile: {
+    summonerName: 'Spirax',
 
-        winrate: 50.1,
-        gamesPlayed: 221,
+    winrate: 50.1,
+    gamesPlayed: 221,
 
-        tier: Client.Tier.Gold,
-        division: Client.Division.III,
+    tier: Client.Tier.Gold,
+    division: Client.Division.III,
 
-        role: Client.Role.Jungle,
-        roleProfile: {
-            winrate: 43.2,
-            gamesPlayed: 47,
-            kda: 2.4
-        }
-    }
+    role: Client.Role.Jungle,
+    roleProfile: {
+      winrate: 43.2,
+      gamesPlayed: 47,
+      kda: 2.4,
+    },
+  },
 };
 
 export const DataRoleChampion: {
-    args: DraftSummonerProfileProps
+  args: DraftSummonerProfileProps;
 } = Template.bind({});
 
 DataRoleChampion.args = {
-    profile: {
-        summonerName: 'Spirax',
+  profile: {
+    summonerName: 'Spirax',
 
-        winrate: 50.1,
-        gamesPlayed: 221,
+    winrate: 50.1,
+    gamesPlayed: 221,
 
-        tier: Client.Tier.Gold,
-        division: Client.Division.III,
+    tier: Client.Tier.Gold,
+    division: Client.Division.III,
 
-        role: Client.Role.Jungle,
-        roleProfile: {
-            winrate: 43.2,
-            gamesPlayed: 47,
-            kda: 2.4
-        },
+    role: Client.Role.Jungle,
+    roleProfile: {
+      winrate: 43.2,
+      gamesPlayed: 47,
+      kda: 2.4,
+    },
 
-        championId: Client.ChampionId.Ekko,
-        championProfile: {
-            winrate: 51.2,
-            gamesPlayed: 12,
-            kda: 2.3
-        }
-    }
+    championId: Client.ChampionId.Ekko,
+    championProfile: {
+      winrate: 51.2,
+      gamesPlayed: 12,
+      kda: 2.3,
+    },
+  },
 };

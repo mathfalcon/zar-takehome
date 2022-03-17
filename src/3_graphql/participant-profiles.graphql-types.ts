@@ -1,3 +1,5 @@
+import { Client } from '../common/league';
+
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -9,22 +11,22 @@ export type Scalars = {
     Float: number;
 };
 
+export type ParticipantInput = {
+    summonerName: Scalars['String'];
+    role?: InputMaybe<Client.Role>;
+    championId?: InputMaybe<Scalars['Int']>;
+};
+
 export type GetParticipantProfilesInput = {
     platformId: Scalars['String'];
     queueId: Scalars['String'];
     participants: Array<InputMaybe<ParticipantInput>>;
 };
 
-export type ParticipantInput = {
-    summonerName: Scalars['String'];
-    role?: InputMaybe<Scalars['String']>;
-    championId?: InputMaybe<Scalars['Int']>;
-};
-
 export type Rank = {
     __typename?: 'Rank';
-    tier: Scalars['String'];
-    division: Scalars['String'];
+    tier: Client.Tier;
+    division: Client.Division;
 };
 
 export type Profile = {
