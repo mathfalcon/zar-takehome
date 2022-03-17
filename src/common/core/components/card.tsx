@@ -1,13 +1,7 @@
-import {
-  Card as MuiCard,
-  fade,
-  makeStyles,
-  Theme,
-  useTheme,
-} from "@material-ui/core";
-import React, { CSSProperties } from "react";
-import { getColor } from "../helper";
-import { Color, Elevation } from "../types";
+import { Card as MuiCard, fade, makeStyles, Theme, useTheme } from '@material-ui/core';
+import React, { CSSProperties } from 'react';
+import { getColor } from '../helper';
+import { Color, Elevation } from '../types';
 
 const useStyles = makeStyles<
   Theme,
@@ -18,24 +12,19 @@ const useStyles = makeStyles<
     elevationHover: Elevation;
     elevationOpacity: number;
   }
->((theme) => ({
-  root: (props) => ({
+>(theme => ({
+  root: props => ({
     color: props.color,
-    backgroundColor: fade(
-      theme.palette.elevation[`e${props.elevation}`],
-      props.elevationOpacity
-    ),
-    "&:hover": {
+    backgroundColor: fade(theme.palette.elevation[`e${props.elevation}`], props.elevationOpacity),
+    '&:hover': {
       color: props.colorHover,
       backgroundColor: fade(
         theme.palette.elevation[`e${props.elevationHover || props.elevation}`],
-        props.elevationOpacity
+        props.elevationOpacity,
       ),
     },
     cursor:
-      props.elevationHover?.length > 0 || props.colorHover?.length > 0
-        ? "pointer"
-        : undefined,
+      props.elevationHover?.length > 0 || props.colorHover?.length > 0 ? 'pointer' : undefined,
   }),
 }));
 
@@ -55,7 +44,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   p = 2,
   color,
   colorHover,
-  elevation = "1",
+  elevation = '1',
   elevationHover,
   elevationOpacity = 1,
   width,

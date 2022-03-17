@@ -54,7 +54,7 @@ export function getTierDivisionName(tier: Tier, division: Division): string {
 }
 
 export function getChampionName(championId: ChampionId): string {
-    const name = championIdToName['' + championId];
+    const name = championIdToName[`${championId}`];
     if (!name?.length) {
         return `unk: ${championId}`;
     }

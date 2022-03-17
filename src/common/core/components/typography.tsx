@@ -4,11 +4,11 @@ import {
   Theme,
   Typography as MuiTypography,
   useTheme,
-} from "@material-ui/core";
-import classNames from "classnames";
-import React from "react";
-import { getColor, getWeight, spacing } from "../helper";
-import { Color, MarginProps, Weight } from "../types";
+} from '@material-ui/core';
+import classNames from 'classnames';
+import React from 'react';
+import { getColor, getWeight, spacing } from '../helper';
+import { Color, MarginProps, Weight } from '../types';
 
 const useStyles = makeStyles<
   Theme,
@@ -18,82 +18,82 @@ const useStyles = makeStyles<
     weight: number;
     lineClamp: number;
   } & MarginProps
->((theme) => ({
-  root: (props) => ({
+>(theme => ({
+  root: props => ({
     marginTop: spacing(theme, props.mt || props.m),
     marginRight: spacing(theme, props.mr || props.m),
     marginBottom: spacing(theme, props.mb || props.m),
     marginLeft: spacing(theme, props.ml || props.m),
     color: props.color,
     fontWeight: props.weight,
-    "&:hover": {
+    '&:hover': {
       color: props.colorHover,
     },
   }),
 
   textExtraSmall: {
     ...theme.typography.textExtraSmall,
-    "&$paragraph": {
-      lineHeight: "1.5rem",
+    '&$paragraph': {
+      lineHeight: '1.5rem',
     },
   },
   textSmall: {
     ...theme.typography.textSmall,
-    "&$paragraph": {
-      lineHeight: "1.5rem",
+    '&$paragraph': {
+      lineHeight: '1.5rem',
     },
   },
   textMain: {
     ...theme.typography.textMain,
-    "&$paragraph": {
-      lineHeight: "1.5rem",
+    '&$paragraph': {
+      lineHeight: '1.5rem',
     },
   },
 
   titleSmall: {
     ...theme.typography.titleSmall,
-    "&$paragraph": {
-      lineHeight: "1.75rem",
+    '&$paragraph': {
+      lineHeight: '1.75rem',
     },
   },
   titleMain: {
     ...theme.typography.titleMain,
-    "&$paragraph": {
-      lineHeight: "1.8125rem",
+    '&$paragraph': {
+      lineHeight: '1.8125rem',
     },
   },
   titleLarge: {
     ...theme.typography.titleLarge,
-    "&$paragraph": {
-      lineHeight: "2rem",
+    '&$paragraph': {
+      lineHeight: '2rem',
     },
   },
   titleExtraLarge: {
     ...theme.typography.titleExtraLarge,
-    "&$paragraph": {
-      lineHeight: "2.5rem",
+    '&$paragraph': {
+      lineHeight: '2.5rem',
     },
   },
 
   paragraph: {},
 
-  lineClamp: (props) => ({
-    display: "-webkit-box",
-    "-webkit-box-orient": "vertical",
-    "-webkit-line-clamp": props.lineClamp,
-    overflow: "hidden",
-    textOverflow: "ellipsis",
+  lineClamp: props => ({
+    display: '-webkit-box',
+    '-webkit-box-orient': 'vertical',
+    '-webkit-line-clamp': props.lineClamp,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
   }),
 }));
 
 export type TypefaceVariant =
-  | "textExtraSmall"
-  | "textSmall"
-  | "textMain"
-  | "titleSmall"
-  | "titleMain"
-  | "titleLarge"
-  | "titleExtraLarge";
+  | 'textExtraSmall'
+  | 'textSmall'
+  | 'textMain'
+  | 'titleSmall'
+  | 'titleMain'
+  | 'titleLarge'
+  | 'titleExtraLarge';
 
 export type TypefaceWeight = Weight;
 export type TypefaceColor = Color;
@@ -118,12 +118,12 @@ export interface TypefaceProps extends MarginProps {
 }
 
 export const Typography: React.FC<TypefaceProps> = ({
-  variant = "textMain",
-  weight = "regular",
-  color = "textPrimary",
+  variant = 'textMain',
+  weight = 'regular',
+  color = 'textPrimary',
   colorHover,
 
-  className = "",
+  className = '',
   style = {},
 
   mt,
@@ -138,7 +138,7 @@ export const Typography: React.FC<TypefaceProps> = ({
   align,
   paragraph,
 
-  component = "p",
+  component = 'p',
   onClick,
   children,
 }) => {
@@ -163,7 +163,7 @@ export const Typography: React.FC<TypefaceProps> = ({
         [classes.lineClamp]: lineClamp > 0,
       })}
       style={{ lineHeight, ...style }}
-      variant="inherit"
+      variant='inherit'
       component={component}
       align={align}
       noWrap={noWrap}
