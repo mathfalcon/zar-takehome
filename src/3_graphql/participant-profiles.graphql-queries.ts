@@ -9,9 +9,24 @@ export const PARTICIPANT_PROFILES_QUERY = gql`
     query GetParticipantProfiles($input: GetParticipantProfilesInput) {        
         getParticipantProfiles(input: $input) {
             summonerName
-            queueProfile
-            championProfile
-            roleProfile            
+            queueProfile {
+                winrate
+                gamesPlayed
+                rank {
+                    tier
+                    division
+                }
+            }
+            championProfile {
+                winrate
+                gamesPlayed
+                kda
+            }
+            roleProfile {
+                winrate
+                gamesPlayed
+                kda
+            }      
         }
     }
 `;
